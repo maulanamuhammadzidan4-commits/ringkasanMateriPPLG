@@ -1,0 +1,413 @@
+/* Reset standar agar tidak ada margin bawaan */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.gold {
+    color: #ffd700; /* Warna emas untuk teks yang ingin disorot */
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.8);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gold:hover {
+    color: #ffec8b; /* Warna emas muda saat di-hover */
+    text-shadow: 0 0 10px rgba(255, 236, 139, 1);
+}
+
+/* Styling Navbar */
+.navbar {
+    background: linear-gradient(135deg, #004e92, #000428); /* Gradasi Biru Laut Dalam */
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.link-container {
+    display: flex;
+    justify-content: center; /* Memastikan semua elemen ke tengah */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Jarak antar teks link */
+    flex: 1; /* Memberi ruang yang sama antara sisi kiri dan kanan */
+}
+
+/* Mengatur agar teks di sebelah kiri rata kanan, dan teks kanan rata kiri */
+.nav-links:first-child {
+    justify-content: flex-end;
+}
+
+.nav-links:last-child {
+    justify-content: flex-start;
+}
+
+.nav-links li a {
+    color: #e0f2f1; /* Warna putih kebiruan (seperti buih laut) */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #4fc3f7; /* Warna biru muda saat di-hover */
+    text-shadow: 0 0 8px rgba(79, 195, 247, 0.8);
+    letter-spacing: 2px;
+}
+
+/* Styling Logo di Tengah */
+.logo {
+    margin: 0 40px; /* Jarak antara logo dengan link kiri & kanan */
+    cursor: pointer;
+}
+
+.logo img {
+    height: 60px; /* Sesuaikan ukuran logo kamu */
+    width: auto;
+    border-radius: 50%; /* Membuat logo bulat (opsional) */
+    border: 2px solid #4fc3f7;
+    transition: transform 0.5s ease;
+}
+
+.logo img:hover {
+    transform: rotate(360deg); /* Animasi putar kecil saat logo disentuh */
+}
+
+/* Styling Umum untuk Section Home dan About */
+#home, #about {
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.8;
+    animation: fadeIn 1s ease forwards;
+}
+
+/* --- SECTION HOME --- */
+#home {
+    border-radius: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#home h1 {
+    font-size: 3rem;
+    color: #000428; /* Warna biru sangat gelap */
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+
+#home p {
+    font-size: 1.2rem;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+/* --- SECTION ABOUT --- */
+#about {
+    background-color: #004e92; /* Latar belakang biru solid (tema laut) */
+    color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 60px;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #4fc3f7; /* Biru muda cerah agar kontras */
+}
+
+#about p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    opacity: 0.95; /* Agar teks putih tidak terlalu menusuk mata */
+}
+
+/* Penekanan pada tujuan hadiah ulang tahun */
+#about p:last-child {
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    border-left: 4px solid #4fc3f7;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    #home h1 {
+        font-size: 2rem;
+    }
+    
+    #about h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Styling Section Semester */
+#s1, #s2 {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 1px solid #4fc3f7;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ffffff, #e0f2f1);
+    box-shadow: 0 8px 20px rgba(0, 78, 146, 0.1);
+    transition: all 0.3s ease;
+    animation: fadeIn 1s ease forwards;
+}
+
+#s1, #s2:hover{
+    box-shadow: 0 12px 30px rgba(0, 78, 146, 0.2);
+}
+
+#s1 h2, #s2 h2 {
+    font-size: 2.5rem;
+    color: #004e92; /* Biru Laut sesuai Navbar */
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Garis bawah di bawah judul Semester */
+#s1 h2::after, #s2 h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #004e92, #4fc3f7);
+    border-radius: 2px;
+}
+
+/* Styling Card Materi */
+.materi {
+    background: #ffffff;
+    border-left: 5px solid #004e92; /* Aksen garis biru di samping */
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.materi:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 78, 146, 0.5);
+    border-left: 5px solid #4fc3f7; /* Berubah warna saat hover */
+}
+
+.materi h3 {
+    color: #004e92;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.materi p {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Styling Sub-bab di dalam materi */
+.subbab {
+    font-weight: bold;
+    color: #0077b6;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+/* Styling List (ul) agar lebih rapi */
+.materi ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.materi ul li {
+    margin-bottom: 8px;
+    color: #555;
+    list-style-type: circle;
+}
+
+/* Styling tag <code> untuk kodingan */
+code {
+    background-color: #e0f2f1;
+    color: #004e92;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+/* Animasi sederhana untuk memunculkan konten */
+.materi {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- SECTION PENULIS (About the Author) --- */
+#penulis {
+    background-color: #f0f7f4; /* Warna putih kebiruan pucat agar beda dengan section lain */
+    padding: 60px 40px;
+    border-radius: 20px;
+    margin-top: 40px;
+    border: 1px solid #d1e9ff;
+}
+
+.tentang {
+    max-width: 800px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 78, 146, 0.1);
+}
+
+.tentang h2 {
+    color: #004e92;
+    margin-bottom: 20px;
+}
+
+.tentang p {
+    color: #333;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- SECTION CONTACT (Form) --- */
+#contact {
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+    text-align: left;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+#contact h3 {
+    color: #004e92;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#contact label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+#contact input, 
+#contact textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+#contact input:focus, 
+#contact textarea:focus {
+    outline: none;
+    border-color: #4fc3f7; /* Biru muda saat diklik */
+}
+
+#contact textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+#contact button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #004e92, #4fc3f7);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#contact button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(79, 195, 247, 0.4);
+}
+
+/* --- FOOTER --- */
+footer {
+    background: #000428; /* Biru gelap pekat (Laut dalam) */
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 80px;
+}
+
+footer p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+#specialthanks {
+    background-color: #fff3e0; /* Warna krem lembut untuk bagian ucapan terima kasih */
+    padding: 40px 20px;
+    border-radius: 15px;
+    margin: 40px auto;
+    max-width: 800px;
+    text-align: center;
+    border: 1px solid #ffcc80;
+    transition: all 0.3s ease;
+    animation: fadeIn 1s ease forwards;
+}
+
+#specialthanks:hover{
+    box-shadow: 0 10px 30px rgba(255, 204, 128, 0.5);
+}
+
+#specialthanks h2 {
+    color: #ff6f00; /* Warna oranye gelap untuk judul ucapan terima kasih */
+    margin-bottom: 20px;
+}
+
+#specialthanks p {
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
