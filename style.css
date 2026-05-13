@@ -11,7 +11,7 @@ body {
 
 .gold {
     color: #ffd700; /* Warna emas untuk teks yang ingin disorot */
-    font-weight: bold;
+    font-weight: bold;  
     text-shadow: 0 0 5px rgba(255, 215, 0, 0.8);
     cursor: pointer;
     transition: all 0.3s ease;
